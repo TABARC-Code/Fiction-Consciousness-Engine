@@ -1,0 +1,98 @@
+{
+  "profile_metadata": {
+    "project": "",
+    "last_updated": "",
+    "approved_sources": [],
+    "thin_evidence": true,
+    "profile_status": "unvalidated | clone_passed | rebuild_passed | accepted_with_gaps",
+    "understanding_score": null,
+    "notes": "Describe behaviour, never copy wording. Use 'unclear' where evidence is thin.",
+    "source_kind": "own approved passages | reconstructed author | blend"
+  },
+  "calibration_areas": {
+    "narrative_distance_and_viewpoint": {
+      "typical_distance": "unclear",
+      "behaviour_under_stress": "unclear",
+      "tense_and_person": "unclear",
+      "entries": []
+    },
+    "sentence_and_paragraph_variation": {
+      "typical_sentence_behaviour": "unclear",
+      "typical_paragraph_behaviour": "unclear",
+      "fragments_questions_repetition": "unclear",
+      "entries": []
+    },
+    "balance_of_action_dialogue_reasoning_exposition": {
+      "proportions_by_scene_type": "unclear",
+      "entries": []
+    },
+    "internal_questions": {
+      "clustering_pattern": "unclear",
+      "when_they_vanish": "unclear",
+      "entries": []
+    },
+    "character_history_introduction": {
+      "triggers": "unclear",
+      "length": "unclear",
+      "return_to_present": "unclear",
+      "entries": []
+    },
+    "action_to_reflection_transitions": {
+      "usual_prompt": "unclear",
+      "entries": []
+    },
+    "uncertainty_and_tension": {
+      "escalation_pattern": "unclear",
+      "handling_of_quiet": "unclear",
+      "entries": []
+    },
+    "conversational_informality": {
+      "contractions": "unclear",
+      "profanity": "unclear",
+      "humour_and_dryness": "unclear",
+      "entries": []
+    },
+    "technical_and_environmental_detail": {
+      "level": "unclear",
+      "how_it_matters": "unclear",
+      "entries": []
+    }
+  },
+  "entry_schema": {
+    "id": "P-001",
+    "area": "one of the nine areas above",
+    "behaviour": "described in behaviour terms, never quoted",
+    "trigger": "when it happens, or null",
+    "tier": "A1 quoted | A2 paraphrased | A3 example | A4 inferred",
+    "location": "source id and passage location",
+    "confidence": "high | medium | low",
+    "marks": [
+      "(+)",
+      "(-)",
+      "(?)",
+      "(=)"
+    ],
+    "status": "active | doubtful | removed"
+  },
+  "unknowns": [
+    {
+      "id": "U-001",
+      "question": "",
+      "evidence_needed": "",
+      "status": "open | closed"
+    }
+  ],
+  "registers": [
+    {
+      "id": "R-001",
+      "applies_when": "",
+      "departures": []
+    }
+  ],
+  "extensions": {
+    "imagery": [],
+    "tone": [],
+    "structure": [],
+    "exclusions": []
+  }
+}
