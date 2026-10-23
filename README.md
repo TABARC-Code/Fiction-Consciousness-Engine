@@ -50,4 +50,6 @@ The script reports differences. It does not give a similarity score, and I don't
 
 The engine is MIT licensed, see `LICENSE`. Several of the sources it draws on have their own status, some unclear. `fiction-consciousness-engine/LICENCE-NOTICE.md` sets out each one. One of them states MIT in its README but had no licence file in the copy I used, so check upstream before you redistribute anything taken from it.
 
+Note: Part Vibe code checked to double check on skills build completion and uploaded to Git. 
+
 Author: TABARC-Code.
