@@ -35,7 +35,7 @@ It checks the verbatim specification files against stored hashes, the file refer
     python3 scripts/stylometrics.py profile SOURCE.txt
     python3 scripts/stylometrics.py compare SOURCE.txt DRAFT.txt
 
-From inside the folder, the same commands work as `python3 scripts/stylometrics.py`. Add `--single-quotes` for dialogue in single quotation marks, and `--json` for machine-readable output.
+Run these from inside `fiction-consciousness-engine/`, because the script paths are relative to it. Add `--single-quotes` for dialogue in single quotation marks, and `--json` for machine-readable output.
 
 The script reports differences. It does not give a similarity score, and I don't plan to add one. Nothing it measures supports a figure like "94 per cent like the author", so I didn't write one. Under about 2,000 words the figures are indicative, and the output says so every time.
 
