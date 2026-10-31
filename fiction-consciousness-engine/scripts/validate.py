@@ -246,6 +246,16 @@ with tempfile.TemporaryDirectory() as tmp:
             fail("stylometrics.py miscounted verse lines")
     except (ValueError, KeyError):
         fail("stylometrics.py gave no line statistics")
+    dashes = Path(tmp) / "d.txt"
+    dashes.write_text("He waited--and then he spoke----slowly.\n\n---\n\nNothing more was said.\n", encoding="utf-8")
+    rd = run(str(ROOT / "scripts/stylometrics.py"), "profile", str(dashes), "--json")
+    try:
+        pd = json.loads(rd.stdout)["profile"]
+        # two hyphen runs in the prose, the rule line left out: 2 dashes in 11 words = 181.82 per 1,000
+        if pd["per_1000_words"]["hyphen_run_dash"] != 181.82 or pd["per_1000_words"]["em_dash"] != 0:
+            fail("stylometrics.py miscounted hyphen-run dashes")
+    except (ValueError, KeyError):
+        fail("stylometrics.py gave no hyphen-run dash figure")
     if run(str(ROOT / "scripts/profile_lint.py"), str(ROOT / "templates/style-profile.md")).returncode != 0:
         fail("the blank profile form does not lint clean: form and linter have drifted")
 

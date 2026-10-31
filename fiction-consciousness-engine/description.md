@@ -1,6 +1,6 @@
 # Fiction Consciousness Engine
 
-Version 3.0.3. Writes and revises fiction in close character consciousness, learns a voice from approved passages, and reconstructs an author's methods from their books for new, original writing.
+Version 3.0.4. Writes and revises fiction in close character consciousness, learns a voice from approved passages, and reconstructs an author's methods from their books for new, original writing.
 
 Seven modes: write, absorb, reconstruct, plan, compare, analyse and audit. Nine subskills with two-way contracts handle corpus reading, contrast extraction, stylistic and narrative forensics, verse and drama, stylometrics, the author dossier, manuscript planning and continuity, and reconstruction testing.
 
@@ -10,4 +10,4 @@ Best for: novels and long manuscripts, continuations, revision, voice calibratio
 
 Not for: passing off new writing as a real author's own; non-fiction drafting beyond analysis.
 
-Status: wiring and scripts tested; not yet run end to end on a full manuscript.
+Status: wiring and scripts tested, and the scripts checked on real novel text; the method has not been run end to end on a full manuscript.

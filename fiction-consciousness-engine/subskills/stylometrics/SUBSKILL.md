@@ -31,6 +31,7 @@ Words, sentences and paragraphs; sentence length (mean, median, spread, share of
 - Sentence splitting is a rule of thumb. Abbreviations, ellipses and verse confuse it. Check a sample of splits on unusual texts.
 - Dialogue detection relies on quotation marks. Unmarked or dashed dialogue is not counted.
 - Under about 2,000 words, most figures are unstable. Report them as indicative.
+- Plain-text editions (Project Gutenberg, for one) hard-wrap lines at about 70 characters and write dashes as `--`. Line figures then show the wrap width, and a dash count of zero may only mean a different convention. The script counts three dash styles, and all three should be read together.
 - Frequent three-word sequences are for spotting habits. They are never a list of phrases to reuse.
 - The comparison reports differences. It does not give a similarity score, because none of these figures add up to "how like the author" a passage is.
 
@@ -45,12 +46,14 @@ Could someone rerun the script on the same file and get the same numbers? Then t
 ## Failure modes
 
 - **False precision.** Two decimal places on a 400-word sample. Repair: round, and mark it indicative.
+- **False zero.** A mark scores zero because the edition writes it another way: dashes as `--`, or dialogue in single or straight quotation marks. Repair: look for the mark in every form in the raw text before recording an absence. Found on a real test: a novel reported as having no dashes had 64.
 - **Numbers as style.** Writing to hit a sentence-length average. Repair: numbers check a profile entry. They never become a target.
 
 ## Signals
 
 - (+) A measured figure confirms a forensic finding.
 - (-) A figure is cited with no file or word count. Remove it until it is rerun.
+- (-) A zero for a punctuation mark in a text that plainly uses it. Check the raw file for the other conventions before trusting the zero.
 
 ## Contract
 

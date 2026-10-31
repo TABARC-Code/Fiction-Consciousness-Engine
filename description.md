@@ -44,7 +44,7 @@ Scores stay out of prose. A delivered chapter is prose. Scores appear only when 
 
 ## Current state
 
-- Working: the router, the subskill wiring, the validator, both scripts, and the templates.
+- Working: the router, the subskill wiring, the validator, both scripts, and the templates. The scripts were run on real public-domain prose in 3.0.4, and that found and fixed a false zero on hyphen-style dashes.
 - Not yet tested: the auditor's anchors against any passage a real author or you have judged. Until that happens, the scores are a guide and nothing more.
 - Planned: calibration against an author's approved passages, and a full run on a real manuscript.
 - Unknown: whether the contrast step (describing the model's default next to the source, then recording only the differences) improves a profile. The idea is sound on paper. I have not measured it.

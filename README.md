@@ -2,7 +2,7 @@
 
 A Claude skill for writing fiction from inside a character's head. It can also learn how a particular author writes, so that a draft is built on a profile somebody has tested rather than on a vague impression of "the style".
 
-Version 3.0.3. The skill itself lives in `fiction-consciousness-engine/`. Everything at the top level of this repository is about getting it into the right place.
+Version 3.0.4. The skill itself lives in `fiction-consciousness-engine/`. Everything at the top level of this repository is about getting it into the right place.
 
 ## What it does
 
@@ -16,7 +16,7 @@ Compare sets two or more profiles side by side, and does not average them. Analy
 
 ## Status
 
-- Working and tested: the two scripts, the validator, and the two-way contract wiring between the subskills.
+- Working and tested: the two scripts, the validator, and the two-way contract wiring between the subskills. The scripts have also been run on real published prose, which turned up a bug (dashes written as `--` read as zero) that is now fixed and guarded by a test.
 - Not yet tested: the method end to end on a full manuscript, or on a real author's corpus. Expect rough edges.
 - Self-assessed: the auditor's scores. It is checked against passages you have judged. Until a project has those, it runs on default anchors and the project is marked "judge uncalibrated".
 

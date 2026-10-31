@@ -33,10 +33,12 @@ PUNCT = {
 ABBREV = r"(?:Mr|Mrs|Ms|Dr|St|Prof|Sr|Jr|vs|etc|e\.g|i\.e|No|Mt|Capt|Col|Gen|Lt|Sgt)"
 WORD = re.compile(r"[A-Za-zÀ-ɏ]+(?:['’][A-Za-z]+)*")
 CONTRACTION = re.compile(r"\b[A-Za-z]+['’](?:s|t|re|ve|ll|d|m)\b", re.I)
+SPACED_HYPHEN = re.compile(r"(?<=\w) - (?=\w)")
 LIMITS = [
     "Sentence splitting is a rule of thumb. Check a sample of splits on unusual texts.",
     "Dialogue is found by quotation marks only. Unmarked or dashed dialogue is missed, and so is a speech whose closing quote is in a later paragraph.",
-    "Line figures describe verse. For prose they just repeat paragraph structure, so ignore them. They show end-stopping, not metre: scan lines by reading them.",
+    "Line figures describe verse. For prose they repeat paragraph structure, or the wrap width when the file is hard-wrapped (Project Gutenberg files are), so ignore them for prose. They show end-stopping, not metre: scan lines by reading them.",
+    "Dashes are counted three ways: typographic em and en dashes, runs of two or more hyphens (how plain-text editions write a dash), and spaced single hyphens. Read all three before concluding an author uses no dashes.",
     "Under about 2,000 words these figures are indicative, not stable.",
     "Three-word sequences are for spotting habits. Never reuse them as phrases.",
 ]
@@ -60,6 +62,14 @@ def dialogue_chars(text, single):
         pats.append(r"(?<![A-Za-z])‘[^’]*(?:’(?![A-Za-z]))")
         pats.append(r"(?<![A-Za-z])'[^']*'(?![A-Za-z])")
     return sum(len(m) for p in pats for m in re.findall(p, text))
+
+
+def hyphen_run_dashes(text):
+    """Plain-text editions write dashes as runs of hyphens (-- or ----). Count each run once,
+    and leave out lines that are only hyphens (horizontal rules)."""
+    runs = len(re.findall(r"-{2,}", text))
+    rules = sum(1 for l in text.splitlines() if re.fullmatch(r"\s*-{2,}\s*", l))
+    return runs - rules
 
 
 def mattr(words, window=500):
@@ -129,6 +139,8 @@ def profile(text, single=False):
         "mattr_500": round(mattr(words), 3),
         "per_1000_words": {
             **{k: per_k(text.count(v)) for k, v in PUNCT.items()},
+            "hyphen_run_dash": per_k(hyphen_run_dashes(text)),
+            "spaced_hyphen_dash": per_k(len(SPACED_HYPHEN.findall(text))),
             "contractions": per_k(len(CONTRACTION.findall(text))),
         },
         "function_words_per_1000": {w: per_k(counts[w]) for w in FUNCTION_WORDS if counts[w]},

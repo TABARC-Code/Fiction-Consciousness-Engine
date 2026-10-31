@@ -1,6 +1,6 @@
 ---
 name: fiction-consciousness-engine
-version: "3.0.3"
+version: "3.0.4"
 description: >
   Writes, continues and revises fiction in close character consciousness, and learns or reconstructs an author's voice from evidence. Studies supplied books, manuscripts, plays, poems and essays; builds an author dossier and a tested style profile; plans books with a blueprint and continuity canon; writes chapter by chapter with a mandatory Style Consistency Auditor gate. Strongest on adult science fiction, suspense, speculative mystery and horror. Use for scenes, chapters, manuscript continuation, revision, drift checks, "learn my voice from these pages", "analyse how this author writes", "write a book in this style", style comparison, and book analysis reports. Output is finished prose only unless analysis, a plan or scores are asked for.
 ---
